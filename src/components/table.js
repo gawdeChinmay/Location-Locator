@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { postalData } from "../data";
+import Map from "./map";
 
 function Table(props) {
 
   const [value , setValue] = useState('');
   const [datasource, setDatasource] = useState(postalData); 
-  const [tablefilter, setTablefilter] = useState([]); 
+  const [tablefilter, setTablefilter] = useState([]);
+  const [searchedLocation, setSearchedLocation] = useState([]);  
 
   const filterData = (e) =>{
      if(e.target.value != ""){
@@ -14,6 +16,10 @@ function Table(props) {
      const filterTable = datasource.filter(o=> Object.keys(o).some(k => String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())));
       setTablefilter([...filterTable])
       //filterdata has data for wat we have search.
+      if (filterTable.length == 1){
+        setSearchedLocation(...[filterTable])
+      }
+        
       
       }
       else{
@@ -26,6 +32,9 @@ function Table(props) {
     <div>
        <div>
          <input type = "text" value={value} onChange = {filterData}/>
+       </div>
+       <div>
+        <Map {...searchedLocation[0]} />
        </div>
       <table class="table">
   <thead>
