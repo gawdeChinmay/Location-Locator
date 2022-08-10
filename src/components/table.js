@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import WorldPoastalCode from '../World Postal Codes.json';
 import { postalData } from "../data";
 
 function Table(props) {
