@@ -31,7 +31,7 @@ function Table(props) {
   <thead>
     <tr>
       <th scope="col">city</th>
-      <th scope="col">country</th>
+      <th scope="col">PostalCode</th>
       <th scope="col">latitude</th>
       <th scope="col">longitude</th>
     </tr>
@@ -41,7 +41,7 @@ function Table(props) {
        return(
             <tr>
               <td>{data.city}</td>
-              <td>{data.country}</td>
+              <td>{data.postalCode}</td>
               <td>{data.latitude}</td>
               <td>{data.longitude}</td>
             </tr>
@@ -53,7 +53,7 @@ function Table(props) {
     return(
          <tr>
            <td>{data.city}</td>
-           <td>{data.country}</td>
+           <td>{data.postalCode}</td>
            <td>{data.latitude}</td>
            <td>{data.longitude}</td>
          </tr>
