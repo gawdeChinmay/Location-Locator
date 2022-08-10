@@ -1,21 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import WorldPoastalCode from '../World Postal Codes.json';
+import { postalData } from "../data";
 
 function Table(props) {
 
-  const dummyData = [
-    {"city":"Dikwa","country":"Nigeria","latitude":12.0419812,"longitude":13.9172992},
-    {"city":"Sparks","country":"United States","postalCode":"89436","latitude":39.603484,"longitude":-119.7078532},
-    {"city":"Trondheim","country":"Norway","postalCode":"7042","latitude":63.4388688,"longitude":10.4232348},
-    {"city":"New York City","country":"United States","postalCode":"10150","latitude":40.7582228,"longitude":-73.9704871},
-    {"city":"Luniao","country":"China","latitude":30.4700383,"longitude":119.784181},
-    {"city":"Letsheng","country":"Botswana","latitude":-22.6700589,"longitude":27.225321},
-    {"city":"Rosso","country":"Mauritania","latitude":16.5163413,"longitude":-15.802612},
-    {"city":"Zhelin","country":"China","latitude":29.2642495,"longitude":115.3133908}
-  ]
-
   const [value , setValue] = useState('');
-  const [datasource, setDatasource] = useState(dummyData); 
+  const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]); 
 
   const filterData = (e) =>{
