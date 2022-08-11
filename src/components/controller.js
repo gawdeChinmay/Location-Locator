@@ -18,20 +18,20 @@ function Controller() {
 // Filters the search string respective set Zoom value
   const filter = (e) =>{
     if(e.target.value != ""){
-      setZoom(constants.ZOOM.ZOOMIN);
-      setValue(e.target.value);
-     const filterTable = searchSpecificLoaction(e.target.value,"poastalCode")
-      setTablefilter([...filterTable])
-      const filterTableLocation = searchSpecificLoaction(e.target.value,"specificPoastalCode")
-      if (filterTableLocation.length == 1 ){
-        setSearchedLocation(...[filterTable])
-      } 
+          setZoom(constants.ZOOM.ZOOMIN);
+          setValue(e.target.value);
+          const filterTable = searchSpecificLoaction(e.target.value,"poastalCode")
+          setTablefilter([...filterTable])
+          const filterTableLocation = searchSpecificLoaction(e.target.value,"specificPoastalCode")
+              if (filterTableLocation.length == 1 ){
+                setSearchedLocation(...[filterTable])
+              } 
       }
-      else{
-          setZoom(constants.ZOOM.ZOOMOUT);
-          setValue(e.target.value)
-          setDatasource([...datasource])
-      }
+        else{
+            setZoom(constants.ZOOM.ZOOMOUT);
+            setValue(e.target.value)
+            setDatasource([...datasource])
+        }
   }
  
   function searchSpecificLoaction(searchValue,operation){
@@ -57,7 +57,6 @@ function Controller() {
   return (
     <div>
       <Map cordinates={searchedLocation} zoom={zoom} />
-      {/* <InputSearchbox value={value} filterDatafunc={filterData} /> */}
       <InputSearchbox value={value} filterDatafunc={filter} />
       <Table value={value} tablefilter={tablefilter} datasource={datasource}/> 
     </div>
