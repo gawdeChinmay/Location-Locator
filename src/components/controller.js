@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { postalData } from "../data";
 import Map from "./map";
 import InputSearchbox from './inputSearchBox';
+import Table from './table';
 
 function Controller(props) {
 // model
@@ -30,50 +31,9 @@ function Controller(props) {
   
   return (
     <div>
-      
-      <InputSearchbox value={value} filterDatafunc={filterData} />
       <Map cordinates={searchedLocation} />
-             
-      <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">city</th>
-      <th scope="col">PostalCode</th>
-      <th scope="col">latitude</th>
-      <th scope="col">longitude</th>
-    </tr>
-  </thead>
-  <tbody>
-   {value.length > 0 ? tablefilter.map((data) => {
-       return(
-            <tr>
-              <td>{data.city}</td>
-              <td>{data.postalCode}</td>
-              <td>{data.latitude}</td>
-              <td>{data.longitude}</td>
-            </tr>
-       )
-
-   })
-  :
-  datasource.map((data) => {
-    return(
-         <tr>
-           <td>{data.city}</td>
-           <td>{data.postalCode}</td>
-           <td>{data.latitude}</td>
-           <td>{data.longitude}</td>
-         </tr>
-    )
-
-})
-  
-
-  }
-
-  </tbody>
-</table>
-      
+      <InputSearchbox value={value} filterDatafunc={filterData} />
+      <Table value={value} tablefilter={tablefilter} datasource={datasource}/> 
     </div>
   );
 }
