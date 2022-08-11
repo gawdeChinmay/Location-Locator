@@ -1,11 +1,11 @@
 import './App.css';
-import Table from './components/table'
+import Controller from './components/controller'
 import React from 'react';
 
 function App() {
   return (    
     <div className="App">
-      <Table/>      
+      <Controller/>      
     </div>
   );
 }

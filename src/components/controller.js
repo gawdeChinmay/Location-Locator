@@ -4,7 +4,7 @@ import { postalData } from "../data";
 import Map from "./map";
 import InputSearchbox from './inputSearchBox';
 
-function Table(props) {
+function Controller(props) {
 // model
   const [value , setValue] = useState('');
   const [datasource, setDatasource] = useState(postalData); 
@@ -30,8 +30,10 @@ function Table(props) {
   
   return (
     <div>
-       <InputSearchbox value={value} filterDatafunc={filterData} />
-        <Map cordinates={searchedLocation} />
+      
+      <InputSearchbox value={value} filterDatafunc={filterData} />
+      <Map cordinates={searchedLocation} />
+             
       <table class="table">
   <thead>
     <tr>
@@ -71,8 +73,9 @@ function Table(props) {
 
   </tbody>
 </table>
+      
     </div>
   );
 }
 
-export default Table;
+export default Controller;
