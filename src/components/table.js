@@ -2,14 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import { postalData } from "../data";
 import Map from "./map";
+import InputSearchbox from './inputSearchBox';
 
 function Table(props) {
-
+// model
   const [value , setValue] = useState('');
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
   const [searchedLocation, setSearchedLocation] = useState([]);  
 
+//controller
   const filterData = (e) =>{
      if(e.target.value != ""){
       setValue(e.target.value);
@@ -18,9 +20,7 @@ function Table(props) {
       //filterdata has data for wat we have search.
       if (filterTable.length == 1){
         setSearchedLocation(...[filterTable])
-      }
-        
-      
+      } 
       }
       else{
           setValue(e.target.value)
@@ -30,9 +30,7 @@ function Table(props) {
   
   return (
     <div>
-       <div>
-         <input type = "text" value={value} onChange = {filterData}/>
-       </div>
+       <InputSearchbox value={value} filterDatafunc={filterData} />
        <div>
         <Map {...searchedLocation[0]} />
        </div>
