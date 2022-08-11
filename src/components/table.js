@@ -1,4 +1,5 @@
 import React from 'react';
+import {constants} from '../constant'
 
 function table(props) {
 
@@ -11,10 +12,10 @@ function table(props) {
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">city</th>
-        <th scope="col">PostalCode</th>
-        <th scope="col">latitude</th>
-        <th scope="col">longitude</th>
+        <th scope="col">{constants.COLUMNAMES.columnOne}</th>
+        <th scope="col">{constants.COLUMNAMES.columnTwo}</th>
+        <th scope="col">{constants.COLUMNAMES.columnThree}</th>
+        <th scope="col">{constants.COLUMNAMES.columnFour}</th>
       </tr>
     </thead>
     <tbody>

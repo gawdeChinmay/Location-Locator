@@ -5,7 +5,7 @@ import Map from "./map";
 import InputSearchbox from './inputSearchBox';
 import Table from './table';
 
-function Controller(props) {
+function Controller() {
 // Model
   const [value , setValue] = useState('');
   const [datasource, setDatasource] = useState(postalData); 

@@ -1,7 +1,12 @@
 
 export const constants = {
-  googleMapApiKey : "AIzaSyDn4HxPq6qJdtb5LUT5WzZNKl1xtVSus9M",
-  GDEX: 'GDEX',
+  GOOGLEMAPAPIKEY : "AIzaSyDn4HxPq6qJdtb5LUT5WzZNKl1xtVSus9M",
+  COLUMNAMES: { 
+    columnOne: 'City',
+    columnTwo: 'Postal-Code',
+    columnThree: 'Latitude',
+    columnFour: 'Longitude'
+  },
   DHL: 'DHL',
   UPS: 'UPS',
 }

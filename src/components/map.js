@@ -21,7 +21,7 @@ function Map(props) {
   return (
     <div>
       <LoadScript
-      googleMapsApiKey = {constants.googleMapApiKey}
+      googleMapsApiKey = {constants.GOOGLEMAPAPIKEY}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
