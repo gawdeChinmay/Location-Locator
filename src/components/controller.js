@@ -12,13 +12,13 @@ function Controller() {
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
   const [searchedLocation, setSearchedLocation] = useState([{city: 'Dan Makham Tia', postalCode: '71260', latitude: 13.8494172, longitude: 99.408315}]);  
-  const [zoom, setZoom] = useState(constants.ZOOM.INITIIALZOOM);
+  const [zoom, setZoom] = useState(constants.ZOOM.initialZoom);
 
 //controller
 // Filters the search string respective set Zoom value
   const filter = (e) =>{
     if(e.target.value != ""){
-          setZoom(constants.ZOOM.ZOOMIN);
+          setZoom(constants.ZOOM.zoomIn);
           setValue(e.target.value);
           const filterTable = searchSpecificLoaction(e.target.value,"poastalCode")
           setTablefilter([...filterTable])
@@ -28,9 +28,8 @@ function Controller() {
               } 
       }
         else{
-            setZoom(constants.ZOOM.ZOOMOUT);
+            setZoom(constants.ZOOM.zoomOut);
             setValue(e.target.value)
-            console.log(value.length)
             setDatasource([...datasource])
         }
   }

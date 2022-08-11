@@ -1,3 +1,4 @@
+// Mock postal code data
 export const postalData = [
   {
     "id": 1,
