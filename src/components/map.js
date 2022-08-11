@@ -16,17 +16,17 @@ function Map(props) {
     lat: props.cordinates[0].latitude,
     lng: props.cordinates[0].longitude
   };
-  
+  const zoom = props.zoom
 
   return (
     <div>
       <LoadScript
-      googleMapsApiKey = {constants.GOOGLEMAPAPIKEY}
+      googleMapsApiKey = {constants.googleMapApiKey}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={12}
+        zoom={zoom}
       >
         { /* Child components, such as markers, info windows, etc. */ }
         <></>

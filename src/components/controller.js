@@ -11,10 +11,12 @@ function Controller() {
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
   const [searchedLocation, setSearchedLocation] = useState([{city: 'Dan Makham Tia', postalCode: '71260', latitude: 13.8494172, longitude: 99.408315}]);  
+  const [zoom, setZoom] = useState(5);
 
 //controller
   const filterData = (e) =>{
      if(e.target.value != ""){
+      setZoom(13)
       setValue(e.target.value);
      const filterTable = datasource.filter(o=> Object.keys(o).some(k => String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())));
       setTablefilter([...filterTable])
@@ -23,6 +25,7 @@ function Controller() {
       } 
       }
       else{
+          setZoom(9)
           setValue(e.target.value)
           setDatasource([...datasource])
       }
@@ -31,7 +34,7 @@ function Controller() {
   // Views
   return (
     <div>
-      <Map cordinates={searchedLocation} />
+      <Map cordinates={searchedLocation} zoom={zoom} />
       <InputSearchbox value={value} filterDatafunc={filterData} />
       <Table value={value} tablefilter={tablefilter} datasource={datasource}/> 
     </div>
