@@ -1,19 +1,19 @@
 export const postalData = [
   {
     "city": "Dengmu",
-    "postalCode": null,
+    "postalCode": 1600,
     "latitude": 28.880867,
     "longitude": 92.836629
   },
   {
     "city": "Changning",
-    "postalCode": null,
+    "postalCode": 16001,
     "latitude": 31.220367,
     "longitude": 121.424624
   },
   {
     "city": "Ternopil’",
-    "postalCode": null,
+    "postalCode": 123,
     "latitude": 49.553517,
     "longitude": 25.594767
   },
@@ -31,7 +31,7 @@ export const postalData = [
   },
   {
     "city": "Kahama",
-    "postalCode": null,
+    "postalCode": 1234,
     "latitude": -3.837556,
     "longitude": 32.593828
   },
@@ -49,7 +49,7 @@ export const postalData = [
   },
   {
     "city": "Pingdingshan",
-    "postalCode": null,
+    "postalCode": 12345,
     "latitude": 33.766169,
     "longitude": 113.192661
   },

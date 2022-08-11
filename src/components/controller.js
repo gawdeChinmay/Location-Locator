@@ -16,13 +16,22 @@ function Controller() {
 
 //controller
 // Filters the search string respective set Zoom value
-  const filterData = (e) =>{
-     if(e.target.value != ""){
+  const filter = (e) =>{
+    if(e.target.value != ""){
       setZoom(constants.ZOOM.ZOOMIN);
       setValue(e.target.value);
-     const filterTable = datasource.filter(o=> Object.keys(o).some(k => String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())));
+     const filterTable = datasource.filter(function(ele){
+        return (String(ele.postalCode).toLowerCase().includes(e.target.value.toLowerCase()) ||
+        String(ele.postalCode).toLowerCase() === (e.target.value.toLowerCase())
+        )
+     });
       setTablefilter([...filterTable])
-      if (filterTable.length == 1){
+      const filterTableLocation = datasource.filter(function(ele){
+        return (String(ele.postalCode).toLowerCase().includes(e.target.value.toLowerCase()) &&
+        String(ele.postalCode).toLowerCase() === (e.target.value.toLowerCase())
+        )
+     });
+      if (filterTableLocation.length == 1 ){
         setSearchedLocation(...[filterTable])
       } 
       }
@@ -31,13 +40,17 @@ function Controller() {
           setValue(e.target.value)
           setDatasource([...datasource])
       }
-    }
+  }
+ 
+
+
   
   // Views
   return (
     <div>
       <Map cordinates={searchedLocation} zoom={zoom} />
-      <InputSearchbox value={value} filterDatafunc={filterData} />
+      {/* <InputSearchbox value={value} filterDatafunc={filterData} /> */}
+      <InputSearchbox value={value} filterDatafunc={filter} />
       <Table value={value} tablefilter={tablefilter} datasource={datasource}/> 
     </div>
   );
