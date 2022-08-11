@@ -33,7 +33,7 @@ const styles = {
 
 function table(props) {
 
-  const inputSearchValue = props.value
+  const inputSearchValue = props.valueSearchBox
   const filteredTabledata = props.tablefilter
   const postaldata = props.datasource
 
@@ -48,31 +48,29 @@ function table(props) {
         <th scope="col">{constants.COLUMNAMES.columnFour}</th>
       </tr>
     </thead>
-    <tbody>
-    {inputSearchValue.length > 0 ? filteredTabledata.map((data) => {
-        return(
-              <tr key = {data.id} style={styles.section3}>
-                <td >{data.city}</td>
-                <td >{data.postalCode}</td>
-                <td >{data.latitude}</td>
-                <td >{data.longitude}</td>
-              </tr>
-        )
-
-    })
-    :
-    postaldata.map((data) => {
-      return(
-          <tr key = {data.id} style={styles.section3}>
-            <td >{data.city}</td>
-            <td >{data.postalCode}</td>
-            <td >{data.latitude}</td>
-            <td >{data.longitude}</td>
-          </tr>
-      )
-
-  })
-}
+    <tbody> 
+            {inputSearchValue.length > 0 ? filteredTabledata.map((data) => { 
+                return(
+                      <tr key = {data.id} style={styles.section3}>
+                        <td >{data.city}</td>
+                        <td >{data.postalCode}</td>
+                        <td >{data.latitude}</td>
+                        <td >{data.longitude}</td>
+                      </tr>
+                )
+            })
+            :
+            postaldata.map((data) => {
+              return(
+                  <tr key = {data.id} style={styles.section3}>
+                    <td >{data.city}</td>
+                    <td >{data.postalCode}</td>
+                    <td >{data.latitude}</td>
+                    <td >{data.longitude}</td>
+                  </tr>
+              )
+          })
+        }
 
     </tbody>
   </table>

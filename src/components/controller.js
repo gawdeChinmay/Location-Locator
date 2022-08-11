@@ -14,27 +14,30 @@ function Controller() {
   const [searchedLocation, setSearchedLocation] = useState([{city: 'Dan Makham Tia', postalCode: '71260', latitude: 13.8494172, longitude: 99.408315}]);  
   const [zoom, setZoom] = useState(constants.ZOOM.initialZoom);
 
-//controller
-// Filters the search string respective set Zoom value
+//Controller
+// Filters data according to searched string 
   const filter = (e) =>{
     if(e.target.value != ""){
+          //Filtered data is stored for rendering Table and Map  
           setZoom(constants.ZOOM.zoomIn);
           setValue(e.target.value);
-          const filterTable = searchSpecificLoaction(e.target.value,"poastalCode")
+          const filterTable = postalCodes(e.target.value,"poastalCode")
           setTablefilter([...filterTable])
-          const filterTableLocation = searchSpecificLoaction(e.target.value,"specificPoastalCode")
+          const filterTableLocation = postalCodes(e.target.value,"specificPoastalCode")
               if (filterTableLocation.length == 1 ){
+                //specific data cordinates is stored for rendering map
                 setSearchedLocation(...[filterTable])
               } 
       }
         else{
+          //Fixture data is stored for rendering Table and Map
             setZoom(constants.ZOOM.zoomOut);
             setValue(e.target.value)
             setDatasource([...datasource])
         }
   }
  
-  function searchSpecificLoaction(searchValue,operation){
+  function postalCodes(searchValue,operation){
     switch(operation) {
       case "specificPoastalCode":
         return datasource.filter(function(ele){
@@ -53,12 +56,12 @@ function Controller() {
   }
 
 
-  // View
+  // Views
   return (
     <div>
-      <Map cordinates={searchedLocation} zoom={zoom} value={value} />
-      <InputSearchbox value={value} filterDatafunc={filter} />
-      <Table value={value} tablefilter={tablefilter} datasource={datasource}/> 
+      <Map cordinates={searchedLocation} zoom={zoom} valueSearchBox={value} />
+      <InputSearchbox valueOfSearchBox={value} filterDatafunc={filter} />
+      <Table valueSearchBox={value} tablefilter={tablefilter} datasource={datasource}/> 
     </div>
   );
 }

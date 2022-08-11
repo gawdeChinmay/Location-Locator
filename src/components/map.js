@@ -18,7 +18,7 @@ function Map(props) {
     lng: props.cordinates[0].longitude
   };
   const zoom = props.zoom
-  const valueSearchBox = props.value 
+  const valueSearchBox = props.valueSearchBox 
 
   return (
     <div style = {containerStyle}>

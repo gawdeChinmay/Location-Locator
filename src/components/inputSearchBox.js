@@ -11,7 +11,7 @@ const styles = {
 function inputSearchBox(props) {
   return (
     <div>
-       <input style = {styles} type ="text" value={props.value} onChange = {props.filterDatafunc} placeholder= "Enter postal code"/>
+       <input style = {styles} type ="text" value={props.valueOfSearchBox} onChange = {props.filterDatafunc} placeholder= "Enter postal code"/>
     </div>
   );
 }
