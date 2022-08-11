@@ -1,12 +1,13 @@
 import React from 'react';
-import { GoogleMap, LoadScript  } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker  } from '@react-google-maps/api';
 import {constants} from '../constant'
 
 const containerStyle = {
   width: '400px',
   height: '400px',
   float:'right',
-  paddingLeft: '100px'
+  paddingLeft: '100px',
+  border: "3px "
 };
 
 
@@ -19,7 +20,7 @@ function Map(props) {
   const zoom = props.zoom
 
   return (
-    <div>
+    <div style = {containerStyle}>
       <LoadScript
       googleMapsApiKey = {constants.googleMapApiKey}
     >
@@ -28,8 +29,9 @@ function Map(props) {
         center={center}
         zoom={zoom}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+        <Marker 
+          position={center}
+          />
       </GoogleMap>
     </LoadScript>
     </div>

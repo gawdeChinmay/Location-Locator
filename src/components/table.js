@@ -38,7 +38,7 @@ function table(props) {
   const postaldata = props.datasource
 
   return (
-    <div>      
+    <div  >      
   <table style={styles.section} >
     <thead>
       <tr style={styles.section2} >
@@ -51,11 +51,11 @@ function table(props) {
     <tbody>
     {inputSearchValue.length > 0 ? filteredTabledata.map((data) => {
         return(
-              <tr style={styles.section3}>
-                <td>{data.city}</td>
-                <td>{data.postalCode}</td>
-                <td>{data.latitude}</td>
-                <td>{data.longitude}</td>
+              <tr key = {data.id} style={styles.section3}>
+                <td >{data.city}</td>
+                <td >{data.postalCode}</td>
+                <td >{data.latitude}</td>
+                <td >{data.longitude}</td>
               </tr>
         )
 
@@ -63,11 +63,11 @@ function table(props) {
     :
     postaldata.map((data) => {
       return(
-          <tr style={styles.section3}>
-            <td>{data.city}</td>
-            <td>{data.postalCode}</td>
-            <td>{data.latitude}</td>
-            <td>{data.longitude}</td>
+          <tr key = {data.id} style={styles.section3}>
+            <td >{data.city}</td>
+            <td >{data.postalCode}</td>
+            <td >{data.latitude}</td>
+            <td >{data.longitude}</td>
           </tr>
       )
 
