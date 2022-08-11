@@ -20,17 +20,9 @@ function Controller() {
     if(e.target.value != ""){
       setZoom(constants.ZOOM.ZOOMIN);
       setValue(e.target.value);
-     const filterTable = datasource.filter(function(ele){
-        return (String(ele.postalCode).toLowerCase().includes(e.target.value.toLowerCase()) ||
-        String(ele.postalCode).toLowerCase() === (e.target.value.toLowerCase())
-        )
-     });
+     const filterTable = searchSpecificLoaction(e.target.value,"poastalCode")
       setTablefilter([...filterTable])
-      const filterTableLocation = datasource.filter(function(ele){
-        return (String(ele.postalCode).toLowerCase().includes(e.target.value.toLowerCase()) &&
-        String(ele.postalCode).toLowerCase() === (e.target.value.toLowerCase())
-        )
-     });
+      const filterTableLocation = searchSpecificLoaction(e.target.value,"specificPoastalCode")
       if (filterTableLocation.length == 1 ){
         setSearchedLocation(...[filterTable])
       } 
@@ -42,9 +34,25 @@ function Controller() {
       }
   }
  
+  function searchSpecificLoaction(searchValue,operation){
+    switch(operation) {
+      case "specificPoastalCode":
+        return datasource.filter(function(ele){
+          return (String(ele.postalCode).toLowerCase().includes(searchValue.toLowerCase()) &&
+          String(ele.postalCode).toLowerCase() === (searchValue.toLowerCase())
+          )
+       });
+
+      case "poastalCode":
+        return datasource.filter(function(ele){
+          return (String(ele.postalCode).toLowerCase().includes(searchValue.toLowerCase()) ||
+          String(ele.postalCode).toLowerCase() === (searchValue.toLowerCase())
+          )
+       })
+    }    
+  }
 
 
-  
   // Views
   return (
     <div>
