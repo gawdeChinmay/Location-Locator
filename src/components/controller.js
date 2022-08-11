@@ -4,6 +4,7 @@ import { postalData } from "../data";
 import Map from "./map";
 import InputSearchbox from './inputSearchBox';
 import Table from './table';
+import {constants} from '../constant'
 
 function Controller() {
 // Model
@@ -11,12 +12,13 @@ function Controller() {
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
   const [searchedLocation, setSearchedLocation] = useState([{city: 'Dan Makham Tia', postalCode: '71260', latitude: 13.8494172, longitude: 99.408315}]);  
-  const [zoom, setZoom] = useState(5);
+  const [zoom, setZoom] = useState(constants.ZOOM.INITIIALZOOM);
 
 //controller
+// Filters the search string respective set Zoom value
   const filterData = (e) =>{
      if(e.target.value != ""){
-      setZoom(13)
+      setZoom(constants.ZOOM.ZOOMIN);
       setValue(e.target.value);
      const filterTable = datasource.filter(o=> Object.keys(o).some(k => String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())));
       setTablefilter([...filterTable])
@@ -25,7 +27,7 @@ function Controller() {
       } 
       }
       else{
-          setZoom(9)
+          setZoom(constants.ZOOM.ZOOMOUT);
           setValue(e.target.value)
           setDatasource([...datasource])
       }

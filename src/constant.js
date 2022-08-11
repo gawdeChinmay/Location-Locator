@@ -7,6 +7,10 @@ export const constants = {
     columnThree: 'Latitude',
     columnFour: 'Longitude'
   },
-  DHL: 'DHL',
+  ZOOM: {
+    ZOOMIN :13,
+    ZOOMOUT: 9,
+    INITIIALZOOM:5
+  },
   UPS: 'UPS',
 }
