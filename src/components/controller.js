@@ -16,7 +16,7 @@ function Controller() {
 
 //Controller
 // Filters data according to searched string 
-  const filter = (e) =>{
+  function filter (e){
     if(e.target.value != ""){
           //Filtered data is stored for rendering Table and Map  
           setZoom(constants.ZOOM.zoomIn);
