@@ -6,7 +6,7 @@ import InputSearchbox from './inputSearchBox';
 import Table from './table';
 
 function Controller(props) {
-// model
+// Model
   const [value , setValue] = useState('');
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
@@ -28,6 +28,7 @@ function Controller(props) {
       }
     }
   
+  // Views
   return (
     <div>
       <Map cordinates={searchedLocation} />
