@@ -30,6 +30,7 @@ function Controller() {
         else{
             setZoom(constants.ZOOM.ZOOMOUT);
             setValue(e.target.value)
+            console.log(value.length)
             setDatasource([...datasource])
         }
   }
@@ -56,7 +57,7 @@ function Controller() {
   // View
   return (
     <div>
-      <Map cordinates={searchedLocation} zoom={zoom} />
+      <Map cordinates={searchedLocation} zoom={zoom} value={value} />
       <InputSearchbox value={value} filterDatafunc={filter} />
       <Table value={value} tablefilter={tablefilter} datasource={datasource}/> 
     </div>

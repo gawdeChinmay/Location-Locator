@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker  } from '@react-google-maps/api';
+import { GoogleMap, LoadScript,MarkerF  } from '@react-google-maps/api';
 import {constants} from '../constant'
 
 const containerStyle = {
@@ -18,6 +18,7 @@ function Map(props) {
     lng: props.cordinates[0].longitude
   };
   const zoom = props.zoom
+  const valueSearchBox = props.value 
 
   return (
     <div style = {containerStyle}>
@@ -29,9 +30,7 @@ function Map(props) {
         center={center}
         zoom={zoom}
       >
-        <Marker 
-          position={center}
-          />
+        { valueSearchBox.length > 0 ? <MarkerF position={center} /> : null }
       </GoogleMap>
     </LoadScript>
     </div>
