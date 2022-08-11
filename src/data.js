@@ -91,7 +91,7 @@ export const postalData = [
     "id": 12,
     "city": "Nogliki",
     "country": "Russia",
-    "postalCode": "632498",
+    "postalCode": "6324981",
     "latitude": 52.2795871,
     "longitude": 104.3213093
   },

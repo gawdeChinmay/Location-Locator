@@ -11,6 +11,5 @@ export const constants = {
     ZOOMIN :13,
     ZOOMOUT: 9,
     INITIIALZOOM:5
-  },
-  UPS: 'UPS',
+  }
 }
