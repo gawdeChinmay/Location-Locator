@@ -42,9 +42,7 @@ function table(props) {
       )
 
   })
-    
-
-    }
+}
 
     </tbody>
   </table>

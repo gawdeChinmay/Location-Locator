@@ -53,7 +53,7 @@ function Controller() {
   }
 
 
-  // Views
+  // View
   return (
     <div>
       <Map cordinates={searchedLocation} zoom={zoom} />
