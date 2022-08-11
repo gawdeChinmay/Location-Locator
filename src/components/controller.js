@@ -10,7 +10,7 @@ function Controller(props) {
   const [value , setValue] = useState('');
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
-  const [searchedLocation, setSearchedLocation] = useState([]);  
+  const [searchedLocation, setSearchedLocation] = useState([{city: 'Dan Makham Tia', postalCode: '71260', latitude: 13.8494172, longitude: 99.408315}]);  
 
 //controller
   const filterData = (e) =>{
@@ -18,7 +18,6 @@ function Controller(props) {
       setValue(e.target.value);
      const filterTable = datasource.filter(o=> Object.keys(o).some(k => String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())));
       setTablefilter([...filterTable])
-      //filterdata has data for wat we have search.
       if (filterTable.length == 1){
         setSearchedLocation(...[filterTable])
       } 
