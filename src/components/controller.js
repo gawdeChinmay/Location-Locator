@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { postalData } from "../data";
+import { postalData } from "../fixtures/data";
 import Map from "./map";
 import InputSearchbox from './inputSearchBox';
 import Table from './table';
-import {constants} from '../constant'
+import {constants} from '../constants/constant';
 
 function Controller() {
 // Model

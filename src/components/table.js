@@ -1,5 +1,5 @@
 import React from 'react';
-import {constants} from '../constant'
+import {constants} from '../constants/constant'
 
 const styles = {
   section: {
