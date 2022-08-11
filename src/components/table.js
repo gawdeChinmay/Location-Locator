@@ -31,9 +31,7 @@ function Table(props) {
   return (
     <div>
        <InputSearchbox value={value} filterDatafunc={filterData} />
-       <div>
-        <Map {...searchedLocation[0]} />
-       </div>
+        <Map cordinates={searchedLocation} />
       <table class="table">
   <thead>
     <tr>

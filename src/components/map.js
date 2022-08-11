@@ -12,8 +12,8 @@ const containerStyle = {
 function Map(props) {
 
   const center = {
-    lat: props.latitude,
-    lng: props.longitude
+    lat: props.cordinates[0].latitude,
+    lng: props.cordinates[0].longitude
   };
   
 
