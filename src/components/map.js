@@ -2,15 +2,6 @@ import React from 'react';
 import { GoogleMap, LoadScript,MarkerF  } from '@react-google-maps/api';
 import {constants} from '../constants/constant'
 
-const containerStyle = {
-  width: '400px',
-  height: '400px',
-  float:'right',
-  paddingLeft: '100px',
-  border: "3px "
-};
-
-
 function Map(props) {
 
   const center = {
@@ -21,7 +12,7 @@ function Map(props) {
   const valueSearchBox = props.valueSearchBox 
 
   return (
-    <div style = {containerStyle}>
+    <div >
       <LoadScript
       googleMapsApiKey = {constants.googleMapApiKey}
     >
@@ -36,5 +27,14 @@ function Map(props) {
     </div>
   );
 }
+
+const containerStyle = {
+  width: '400px',
+  height: '400px',
+  padding: "19px 50px",
+  margin: "8px",
+  border: "3px ",
+  marginBottom: "200px"
+};
 
 export default Map;

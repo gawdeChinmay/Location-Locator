@@ -1,13 +1,5 @@
 import React from 'react';
 
-const styles = {
-  width: "40%",
-  padding: "12px 20px",
-  margin: "8px",
-  backgroundColor: "#ffff",
-  border: "3px solid #555"
-};
-
 function inputSearchBox(props) {
   return (
     <div>
@@ -15,5 +7,14 @@ function inputSearchBox(props) {
     </div>
   );
 }
+
+const styles = {
+  width: "40%",
+  padding: "12px 20px",
+  margin: "8px",
+  backgroundColor: "#ffff",
+  border: "3px solid #555",
+  textAlign:"center"
+};
 
 export default inputSearchBox;

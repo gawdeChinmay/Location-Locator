@@ -58,12 +58,27 @@ function Controller() {
 
   // Views
   return (
-    <div>
+    <div style = {styles.section2}>
       <Map cordinates={searchedLocation} zoom={zoom} valueSearchBox={value} />
+      <div style = {styles.section1}>
       <InputSearchbox valueOfSearchBox={value} filterDatafunc={filter} />
       <Table valueSearchBox={value} tablefilter={tablefilter} datasource={datasource}/> 
+      </div>
     </div>
   );
 }
+
+const styles = {
+  section1 : {
+  display: "flex",
+  flexDirection: "column"
+},
+  section2 : {
+  display: "flex",
+  flexDirection: "row-reverse",
+  justifyContent: "space-evenly",
+  backgroundColor: "#FFE4C4"
+}
+};
 
 export default Controller;

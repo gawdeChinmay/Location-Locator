@@ -1,36 +1,6 @@
 import React from 'react';
 import {constants} from '../constants/constant'
 
-const styles = {
-  section: {
-    fontFamily: "-apple-system",
-    fontSize: "1rem",
-    fontWeight: 1.5,
-    lineHeight: 1.5,
-    color: "#292b2c",
-    backgroundColor: "#FFE4C4",
-    padding: "0 2em",   
-  },
-  section2: {
-    fontFamily: "-apple-system",
-    fontSize: "1rem",
-    fontWeight: 1.5,
-    lineHeight: 1.5,
-    color: "#ffff",
-    backgroundColor: "#DEB887",
-    padding: "0 2em",   
-  },
-  section3: {
-    fontFamily: "-apple-system",
-    fontSize: "1rem",
-    fontWeight: 1.5,
-    lineHeight: 1.5,
-    color: "#292b2c",
-    backgroundColor: "#ffff",
-    padding: "0 2em",   
-  }
-};
-
 function table(props) {
 
   const inputSearchValue = props.valueSearchBox
@@ -77,5 +47,33 @@ function table(props) {
     </div>
   );
 }
+
+
+const styles = {
+  section: {
+    fontFamily: "-apple-system",
+    fontSize: "1rem",
+    fontWeight: 1.5,
+    lineHeight: 1.5,
+    color: "#292b2c",
+    backgroundColor: "#FFE4C4",
+  },
+  section2: {
+    fontFamily: "-apple-system",
+    fontSize: "1rem",
+    fontWeight: 1.5,
+    lineHeight: 1.5,
+    color: "#ffff",
+    backgroundColor: "#DEB887",   
+  },
+  section3: {
+    fontFamily: "-apple-system",
+    fontSize: "1rem",
+    fontWeight: 1.5,
+    lineHeight: 1.5,
+    color: "#292b2c",
+    backgroundColor: "#ffff",
+  }
+};
 
 export default table;
