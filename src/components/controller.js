@@ -8,7 +8,7 @@ import {constants} from '../constants/constant';
 
 function Controller() {
 // Model
-  const [value , setValue] = useState('');
+  const [inputPostalCode , setinputPostalCode] = useState('');
   const [datasource, setDatasource] = useState(postalData); 
   const [tablefilter, setTablefilter] = useState([]);
   const [searchedLocation, setSearchedLocation] = useState([{city: 'Dan Makham Tia', postalCode: '71260', latitude: 13.8494172, longitude: 99.408315}]);  
@@ -20,7 +20,7 @@ function Controller() {
     if(e.target.value != ""){
           //Filtered data is stored for rendering Table and Map  
           setZoom(constants.ZOOM.zoomIn);
-          setValue(e.target.value);
+          setinputPostalCode(e.target.value);
           const filterTable = postalCodes(e.target.value,"poastalCode")
           setTablefilter([...filterTable])
           const filterTableLocation = postalCodes(e.target.value,"specificPoastalCode")
@@ -32,7 +32,7 @@ function Controller() {
         else{
           //Fixture data is stored for rendering Table and Map
             setZoom(constants.ZOOM.zoomOut);
-            setValue(e.target.value)
+            setinputPostalCode(e.target.value)
             setDatasource([...datasource])
         }
   }
@@ -59,10 +59,10 @@ function Controller() {
   // Views
   return (
     <div style = {styles.section2}>
-      <Map cordinates={searchedLocation} zoom={zoom} valueSearchBox={value} />
+      <Map cordinates={searchedLocation} zoom={zoom} valueSearchBox={inputPostalCode} />
       <div style = {styles.section1}>
-      <InputSearchbox valueOfSearchBox={value} filterDatafunc={filter} />
-      <Table valueSearchBox={value} tablefilter={tablefilter} datasource={datasource}/> 
+      <InputSearchbox valueOfSearchBox={inputPostalCode} filterDatafunc={filter} />
+      <Table valueSearchBox={inputPostalCode} tablefilter={tablefilter} datasource={datasource}/> 
       </div>
     </div>
   );
