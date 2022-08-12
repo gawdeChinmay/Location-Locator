@@ -9,41 +9,41 @@ function table(props) {
 
   return (
     <div  >      
-  <table style={styles.section} >
-    <thead>
-      <tr style={styles.section2} >
-        <th scope="col">{constants.COLUMNAMES.columnOne}</th>
-        <th scope="col">{constants.COLUMNAMES.columnTwo}</th>
-        <th scope="col">{constants.COLUMNAMES.columnThree}</th>
-        <th scope="col">{constants.COLUMNAMES.columnFour}</th>
-      </tr>
-    </thead>
-    <tbody> 
-            {inputSearchValue.length > 0 ? filteredTabledata.map((data) => { 
-                return(
+      <table style={styles.section} >
+        <thead>
+          <tr style={styles.section2} >
+            <th scope="col">{constants.COLUMNAMES.columnOne}</th>
+            <th scope="col">{constants.COLUMNAMES.columnTwo}</th>
+            <th scope="col">{constants.COLUMNAMES.columnThree}</th>
+            <th scope="col">{constants.COLUMNAMES.columnFour}</th>
+          </tr>
+        </thead>
+        <tbody> 
+                {inputSearchValue.length > 0 ? filteredTabledata.map((data) => { 
+                    return(
+                          <tr key = {data.id} style={styles.section3}>
+                            <td >{data.city}</td>
+                            <td >{data.postalCode}</td>
+                            <td >{data.latitude}</td>
+                            <td >{data.longitude}</td>
+                          </tr>
+                    )
+                })
+                :
+                postaldata.map((data) => {
+                  return(
                       <tr key = {data.id} style={styles.section3}>
                         <td >{data.city}</td>
                         <td >{data.postalCode}</td>
                         <td >{data.latitude}</td>
                         <td >{data.longitude}</td>
                       </tr>
-                )
-            })
-            :
-            postaldata.map((data) => {
-              return(
-                  <tr key = {data.id} style={styles.section3}>
-                    <td >{data.city}</td>
-                    <td >{data.postalCode}</td>
-                    <td >{data.latitude}</td>
-                    <td >{data.longitude}</td>
-                  </tr>
-              )
-          })
-        }
+                  )
+              })
+            }
 
-    </tbody>
-  </table>
+        </tbody>
+      </table>
     </div>
   );
 }
